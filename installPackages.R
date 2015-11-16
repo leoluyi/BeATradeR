@@ -1,7 +1,7 @@
-install.packages("devtools")
-library(devtools)
-install_github("joshuaulrich/quantmod")
-install.packages("PerformanceAnalytics")
-install.packages("foreach")
-install.packages("quantstrat", repos="http://R-Forge.R-project.org", type="source")
-
+pkgs <- c("quantmod", "PerformanceAnalytics", "foreach",
+          "quantstrat", "httr", "rvest", "stringr", 
+          "RSQLite", "RMySQL", "dplyr", "e1071", "xgboost",
+          "ada")
+repos.list <- c("http://140.112.170.201/R", "http://45.33.57.118/R", "http://datasci-info.github.io/R")
+install.packages(pkgs, repos = sample(repos.list, 1, prob = c(3, 5, 2)))
+install.packages("spls")
